@@ -1,0 +1,13 @@
+spring:
+   profiles: development
+   jpa:
+      hibernate:
+         ddl-auto: none
+         use-new-id-generator-mappings: false
+server:
+   port: 8000
+---
+spring:
+   profiles: test
+server:
+   port: 9000

@@ -1,6 +1,6 @@
 package com.atm.machine.atmmachine.data;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,10 +10,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="AUTHENTICATION_LOG")
-public class Authentication {
+public class BankAccountAuthentication {
 	
 	@Id
-	@Column(name="ACCOUNT_ID")
+	@Column(name="ID")
 	@GeneratedValue
 	private int id;
 	@Column(name="ACCOUNT_NUMBER")
@@ -21,25 +21,29 @@ public class Authentication {
 	@Column(name="TOKEN")
 	private String token;
 	@Column(name="TOKEN_ISSUE_TIME")
-	private Timestamp timestamp;
+	private LocalDateTime timestamp;
+	@Column(name="VALID")
+	private boolean valid;
 	
-	public Authentication() {
+	public BankAccountAuthentication() {
 		
 	}
 	
-	public Authentication(int id, int accountNumber, String token, Timestamp timestamp) {
+	public BankAccountAuthentication(int id, int accountNumber, String token, LocalDateTime timestamp) {
 		super();
 		this.id = id;
 		this.accountNumber = accountNumber;
 		this.token = token;
 		this.timestamp = timestamp;
+		this.valid = true;
 	}
 	
-	public Authentication(int accountNumber, String token, Timestamp timestamp) {
+	public BankAccountAuthentication(int accountNumber, String token, LocalDateTime localDateTime) {
 		super();
 		this.accountNumber = accountNumber;
 		this.token = token;
-		this.timestamp = timestamp;
+		this.timestamp = localDateTime;
+		this.valid = true;
 	}
 	
 	public int getId() {
@@ -60,10 +64,18 @@ public class Authentication {
 	public void setToken(String token) {
 		this.token = token;
 	}
-	public Timestamp getTimestamp() {
+	public LocalDateTime getTimestamp() {
 		return timestamp;
 	}
-	public void setTimestamp(Timestamp timestamp) {
+	public void setTimestamp(LocalDateTime timestamp) {
 		this.timestamp = timestamp;
+	}
+
+	public boolean isValid() {
+		return valid;
+	}
+
+	public void setValid(boolean valid) {
+		this.valid = valid;
 	}
 }

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.atm.machine.atmmachine.customExceptionsAndErrors.BankAccountGenericException;
 import com.atm.machine.atmmachine.data.ATMMachineDenominations;
 import com.atm.machine.atmmachine.data.BankAccount;
-import com.atm.machine.atmmachine.repository.ATMMachineRepository;
 import com.atm.machine.atmmachine.repository.BankAccountRepository;
 
 @Service
@@ -31,14 +30,7 @@ public class ATMTransactionService {
     }
 	
 	public BankAccount getAccountByAccountNumber(BankAccount bankAccount) throws BankAccountGenericException{
-        BankAccount account =  this.bankAccountRepository.findByAccountNumber(bankAccount.getAccountNumber());
-        if(account == null) {
-        	throw new BankAccountGenericException("Account Not Found");
-        }
-        if(account.getPin().equals(bankAccount.getPin())) {
-        	return account;
-        }
-        throw new BankAccountGenericException("Incorrect Account PIN");
+        return this.bankAccountRepository.findByAccountNumber(bankAccount.getAccountNumber());
 	}
 	
 	public List<ATMMachineDenominations> withdrawMoney(BankAccount bankAccount, int amount) throws BankAccountGenericException {

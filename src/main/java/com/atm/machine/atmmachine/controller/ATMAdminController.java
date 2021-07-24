@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.atm.machine.atmmachine.data.ATMMachineDenominations;
-import com.atm.machine.atmmachine.data.BankAccount;
 import com.atm.machine.atmmachine.service.ATMService;
 
 @RestController

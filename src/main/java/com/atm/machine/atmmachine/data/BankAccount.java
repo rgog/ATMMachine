@@ -74,4 +74,8 @@ public class BankAccount {
 		this.overdraft = overdraft;
 	}
 	
+	public double getWithdrawalLimit() {
+		return this.openingBalance + this.overdraft;
+	}
+	
 }

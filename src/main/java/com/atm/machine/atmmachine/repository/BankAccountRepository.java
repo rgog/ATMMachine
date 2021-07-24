@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.atm.machine.atmmachine.data.BankAccount;
 
 @Repository
-public interface BankAccountRepository extends CrudRepository<BankAccount, Long>{
+public interface BankAccountRepository extends CrudRepository<BankAccount, Integer>{
 	BankAccount findByAccountNumber(int accountNumber);
 }

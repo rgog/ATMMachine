@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="AUTHENTICATION_LOG")
-public class BankAccountAuthentication {
+public class Auth {
 	
 	@Id
 	@Column(name="ID")
@@ -25,11 +25,11 @@ public class BankAccountAuthentication {
 	@Column(name="VALID")
 	private boolean valid;
 	
-	public BankAccountAuthentication() {
+	public Auth() {
 		
 	}
 	
-	public BankAccountAuthentication(int id, int accountNumber, String token, LocalDateTime timestamp) {
+	public Auth(int id, int accountNumber, String token, LocalDateTime timestamp) {
 		super();
 		this.id = id;
 		this.accountNumber = accountNumber;
@@ -38,7 +38,7 @@ public class BankAccountAuthentication {
 		this.valid = true;
 	}
 	
-	public BankAccountAuthentication(int accountNumber, String token, LocalDateTime localDateTime) {
+	public Auth(int accountNumber, String token, LocalDateTime localDateTime) {
 		super();
 		this.accountNumber = accountNumber;
 		this.token = token;

@@ -1,5 +1,5 @@
 spring:
-   profiles: development
+   profiles: dev
    jpa:
       hibernate:
          ddl-auto: none
@@ -8,6 +8,10 @@ server:
    port: 8000
 ---
 spring:
-   profiles: test
+   profiles: prod
+   jpa:
+      hibernate:
+         ddl-auto: none
+         use-new-id-generator-mappings: false
 server:
-   port: 9000
+   port: 8080

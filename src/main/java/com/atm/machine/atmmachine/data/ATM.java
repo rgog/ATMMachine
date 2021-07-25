@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="ATM_MACHINE")
-public class ATMMachineDenominations {
+public class ATM {
 	
 	@Id
 	@Column(name="ID")
@@ -19,13 +19,10 @@ public class ATMMachineDenominations {
 	@Column(name="NUMBER_OF_BILLS")
 	private int numberOfBills;
 	
-	public ATMMachineDenominations() {
-		
+	public ATM() {
 	}
-	
-	public ATMMachineDenominations(int id, int billDenomination, int numberOfBills) {
-		super();
-		this.id = id;
+
+	public ATM(int billDenomination, int numberOfBills) {
 		this.billDenomination = billDenomination;
 		this.numberOfBills = numberOfBills;
 	}

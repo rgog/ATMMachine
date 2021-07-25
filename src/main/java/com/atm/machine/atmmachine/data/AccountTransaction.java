@@ -1,16 +1,14 @@
 package com.atm.machine.atmmachine.data;
 
-public class ATMTransaction {
+public class AccountTransaction {
 
 	private BankAccount bankAccount;
 	private int withdrawalAmount;
 
-	public ATMTransaction() {
-
+	public AccountTransaction() {
 	}
 
-	public ATMTransaction(BankAccount bankAccount, int withdrawalAmount) {
-		super();
+	public AccountTransaction(BankAccount bankAccount, int withdrawalAmount) {
 		this.bankAccount = bankAccount;
 		this.withdrawalAmount = withdrawalAmount;
 	}

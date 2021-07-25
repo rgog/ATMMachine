@@ -5,7 +5,7 @@ spring:
          ddl-auto: none
          use-new-id-generator-mappings: false
 server:
-   port: 8000
+   port: 8080
 ---
 spring:
    profiles: prod

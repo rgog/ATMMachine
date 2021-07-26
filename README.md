@@ -16,11 +16,22 @@ mvn clean install
 ```
 **3. Run the App**
 You can change the profile from prod to dev in the following command:
+
+Using Maven
+
 ```bash
 mvn spring-boot:run -Dspring-boot.run.profiles=prod
 ```
 
+Using Command Line
+
+```bash
+java -Dspring.profiles.active=prod -jar docker-spring-boot-atm-machine.jar
+```
+
 The app will start running at <http://localhost:8080>
+
+**Note** - A Dockerfile has also been provided in order to build and run a docker image
 
 ## Explore Rest APIs
 

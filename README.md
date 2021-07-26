@@ -36,10 +36,12 @@ The app defines following APIs.`
 
 | Method | Url | Decription | Sample Valid Request Body |  Request Headers |
 | ------ | --- | ---------- | --------------------------- | --- | 
-| POST   | /accountmgmt/account | Get Account Details for one account | [JSON](#account) | authToken:<Received in login response>| 
-| POST   | /accountmgmt/withdraw | Withdraw amount | [JSON](#withdraw) | authToken:<Received in login |
+| POST   | /accountmgmt/account | Get getails for account | [JSON](#account) | authToken: Received in login response |
+| POST   | /accountmgmt/withdraw | Withdraw amount | [JSON](#withdraw) | authToken: Received in login response |
 
-### Admin - These APIs only work for the "dev" profile
+### Admin
+
+These APIs only work for the "dev" profile
 
 | Method | Url | Description | 
 | ------ | --- | ----------- | 
@@ -51,7 +53,15 @@ The app defines following APIs.`
 
 Test them using postman or any other rest client.
 
-## Sample Valid JSON Request Bodys
+## Sample Valid JSON Request/Response Bodys
+
+##### <a id="login">login -> /login</a>
+```json
+{
+	"accountNumber": "Enter account number",
+	"pin": "Enter pin"
+}
+```
 
 ##### <a id="loginresponse"> Login Response -> /login</a>
 ```json
@@ -64,18 +74,11 @@ Test them using postman or any other rest client.
 }
 ```
 
-##### <a id="login">login -> /login</a>
-```json
-{
-	"accountNumber": <Enter account number here>,
-	"pin": "<Enter pin here>"
-}
-```
 
 ##### <a id="account">account -> /accountmgmt/account
 ```json
 {
-	"accountNumber": <Enter account number here>,
+	"accountNumber": "Enter account number"
 }
 ```
 
@@ -83,8 +86,8 @@ Test them using postman or any other rest client.
 ```json
 {
     "bankAccount":{
-        "accountNumber": <Enter account number here>
+        "accountNumber": "Enter account number"
     },
-    "withdrawalAmount": <Enter amount>
+    "withdrawalAmount": "Enter amount"
 }
 ```
